@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lab 4</title>
+        <!-- -->
+        <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script>
+            function loadData(){
+              csv_path: '/documents/Github/Lab4/HRnames.csv'; 
+              element: 'table-container';
+              allow_download: true;
+              datatables_options: {"paging"; false};
+            };
+
+          </script>
+    </head>
+    <body>
+        <h1>Lab 4</h1>
+        <p>Test</p>
+        <table class="table table-striped" id="HRDirectory">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                </tr>
+            </thead>
+          </table>
+
+    </body>
+    <script>
+        const data = document.getElementById("HRnames");
+        d3.csv("HRnames.csv", function (data) {
+            for (var i = 0; i < data.length; i++) {
+            console.log(data);
+          text += data[i] + "<br>";
+        }
+        });
+        for(let row of rows){
+            let cols=row.match();
+        }
+        d3.selectAll("p").data();
+
+        
+     </script>
+</html>

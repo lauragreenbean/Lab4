@@ -65,11 +65,10 @@
 
 <script>
   
-  d3.csv("HRnames.csv", get.function(data))
-    console.log(data)
+  d3.csv("HRnames.csv", function(data)){ 
+    console.log(data);
+  }
   
-  
-
 </script>
 
 </html>

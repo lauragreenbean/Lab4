@@ -8,11 +8,10 @@
   <title>Company Hr Directory from a CSV File</title>
   <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
   <script src="https://d3js.org/d3.v6.min.js"></script>
-  <style>
-   #cards div {
-    display:inline-block;
-   }
-  </style>
+  <script>
+  
+ </script>
+  
 </head>
 
 <body>
@@ -20,16 +19,6 @@
   <div class="container">
     <h1>HR Directory</h1>
 
-    <!-- <div id="cards">
-      <div class="card" style="width:25%;">
-        <img src="https://placekitten.com/125/125" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">John Doe</h5>
-          <p class="card-text">San Francisco, California</p>
-          <a class="btn btn-primary" href="mailto:mrfancypants@cats.com">Email Me</a>
-          <a class="btn btn-primary" href="tel:000-000-0000">Call Me</a>
-      </div>
-    </div> -->
 
     <div id="directory">
       <table class="table table-striped" id="directoryTable">
@@ -58,18 +47,20 @@
           </tr>
         </tbody>
       </table>
+
     </div>
   </div>
-
 </body>
 
 <script>
-  
-  
-  d3.csv("HRnames.csv", function(data) {
-    console.log(data);
-  }); 
-  
+  d3.csv("HRnames.csv", function (data){
+    console.log(data); 
+    let row="<tr>";
+    row += "<td><img src='" + data['picture.thumbnail'] + "'></td>';
+    
+   d3.select("body").append("tr".html(row);
+    });
 </script>
+
 
 </html>

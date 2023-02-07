@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Hr Directory from a CSV File</title>
+  <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css">
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <script>
+  
+ </script>
+  
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>HR Directory</h1>
+
+   
+    <div id="directory" >
+      <table class="table table-striped" id="directoryTable">
+        <thead>
+          <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>State</th>
+            <th>Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+         
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</body>
+
+<script>
+  d3.csv("HRnames.csv", function (data){
+    console.log(data); 
+    let row ='<tr>';
+    row += '<td><img src="' + data['picture.thumbnail'] + '"></td>';
+    row += '<td>' + data['name.first'] + ' ' + data['name.last'] + '</td>';
+    row += '<td>' + data['location.city'] + '</td>';
+    row += '<td>' + data['location.state'] + '</td>';
+    row += '<td><a href="mailto:' + data.email + '">' + data.email + '</a></td>';
+    row += '<td><a href="tel:' + data.phone + '">' + data.phone + '</a></td>';
+    row += '</tr>';
+    d3.select('#directoryTable tbody').append('tr').html(row);
+    
+   
+    });
+</script>
+
+
+</html>

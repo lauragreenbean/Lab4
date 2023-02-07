@@ -60,8 +60,8 @@
     let row='<tr>';
     row += '<td><img src="' + data['picture.thumbnail'] + '"></td>';
     row += '<td>' + data.nameFirst + ' ' + data.namelast + '</td>';
-    row += '<td>' + data.location.city + '</td>';
-    row += '<td>' + data.location.state + '</td>';
+    row += '<td>' + data['location.city'] + '</td>';
+    row += '<td>' + data['location.state'] + '</td>';
     row += '<td><a href="mailto:' + data.email + '">' + data.email + '</a></td>';
     row += '<td><a href="tel:' + data.phone + '">' + data.phone + '</a></td>';
     row += '</tr>';
